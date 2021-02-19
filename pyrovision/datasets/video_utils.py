@@ -147,11 +147,10 @@ class FrameExtractor:
             if not allow_duplicates:
                 raise ValueError(f"Not enough frames available({frames_range_len})"
                                  f" in the state to extract {n_frames} frames from {state.fBase}")
-            else:
-                warnings.warn(f"frames available({frames_range_len}) in the state"
-                              f"are lower than the ones to extract ({n_frames}) from {state.fBase}."
-                              f"Warning, they will be duplicates registered in labels but"
-                              f"no duplicates as images because of unique filenames")
+            warnings.warn(f"frames available({frames_range_len}) in the state"
+                          f"are lower than the ones to extract ({n_frames}) from {state.fBase}."
+                          f"Warning, they will be duplicates registered in labels but"
+                          f"no duplicates as images because of unique filenames")
 
         # Let's pick frames according to strategy
         if random:

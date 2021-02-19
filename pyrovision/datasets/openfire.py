@@ -182,10 +182,10 @@ class OpenFire(VisionDataset):
             if is_ok:
                 valid_samples.append(sample)
 
-        # HTTP errors
+                # HTTP errors
         if dl_issues == len(extract):
             raise RuntimeError('Images not found. You can use download=True to download them.')
-        elif dl_issues > 0:
+        if dl_issues > 0:
             warnings.warn(f'{dl_issues}/{len(extract)} sample images are not present on disk. '
                           'Please retry downloading later.')
         # Extract errors
